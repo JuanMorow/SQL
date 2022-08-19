@@ -1,2 +1,5 @@
-# SQL
-SQL Portfolio
+Juan Sanchez's SQL Portfolio.
+
+Welcome to my SQL portfolio! This code repository contains examples of SQL I've written. Feel free to take a look and reach out if you have questions and/ or suggestions:
+
+jjsm7375@hotmail.com
