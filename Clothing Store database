@@ -1,0 +1,26 @@
+--Create a clothing store database.
+
+CREATE TABLE clothing_store (id INTEGER PRIMARY KEY, item TEXT, price INTEGER, material TEXT, color TEXT);
+INSERT INTO clothing_store VALUES
+(1,"t-shirts", 5, "cotton", "white"),
+(2, "dresses", 15, "polyester", "pink"),
+(3, "jeans", 20, "cotton", "blue"),
+(4, "Shirts", 10, "cotton", "green"),
+(5, "jackets", 30, "leather", "black"),
+(6, "sweaters", 10, "cotton", "red"),
+(7, "hoodies", 5, "cotton", "yellow"),
+(8, "shoes", 45, "leather", "brown"),
+(9, "socks", 2, "cotton", "white"),
+(10, "belts", 3, "leather", "brown"),
+(11, "ties", 1, "polyester", "blue"),
+(12, "tank tops", 3, "cotton", "white"),
+(13, "underwear", 2, "cotton", "black"),
+(14, "boots", 40, "leather", "brown"),
+(15, "shorts", 10, "cotton", "purple");
+
+--Display database ordered by price.
+
+SELECT * FROM clothing_store ORDER BY price asc;
+
+--Display different material options.
+SELECT material FROM clothing_store GROUP BY material
