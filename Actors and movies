@@ -1,0 +1,38 @@
+CREATE TABLE actors (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    full_name TEXT,
+    age INTEGER);
+    
+INSERT INTO actors (full_name, age) VALUES
+    ("Anne Hathaway", 40),
+    ("Robert De Niro", 79),
+    ("Nicole Kidman", 55),
+    ("Sandra Bullock", 62),
+    ("Meryl Streeep", 73),
+    ("Leonardo DiCaprio", 48);
+    
+CREATE TABLE movies (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    actor_id INTEGER,
+    name TEXT,
+    rating INTEGER);
+
+INSERT INTO movies (actor_id, name, rating) VALUES
+    (1, "Devil wears prada", 4),
+    (1, "The Intern", 3),
+    (2, "The Intern", 3),
+    (3, "Practical Magic", 4),
+    (5, "Don't look up", 2),
+    (5, "Devil wears prada", 5),
+    (4, "Practical Magic", 4),
+    (6, "Don't look up", 3);
+        
+SELECT * FROM actors;
+SELECT * FROM movies;
+
+--wanted to show some actors and their corresponding movie from the list below-- 
+
+SELECT actors.full_name, movies.name as MOVIE FROM actors
+    JOIN movies
+    ON movies.actor_id = actors.id
+    ORDER BY movies.name;
