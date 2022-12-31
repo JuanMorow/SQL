@@ -4,7 +4,7 @@
 
 SELECT count(*)
 FROM "CharlotteChaze/BreakIntoTech"."netflix_titles_info" titles
-WHERE type="Movie";
+WHERE type='Movie';
 
 --2)When was the most recent batch of tv shows and/or movies added to the database?
 
@@ -21,12 +21,12 @@ ORDER BY title asc;
 SELECT people.director
 FROM "CharlotteChaze/BreakIntoTech"."netflix_people" people
     JOIN "CharlotteChaze/BreakIntoTech"."netflix_titles_info" titles
-    ON people.show_id = titles.show_id WHERE titles.title = "Bright Star";
+    ON people.show_id = titles.show_id WHERE titles.title = 'Bright Star';
 
 5)What is the oldest movie in the database and what year was it made?
 
 SELECT title
 FROM "CharlotteChaze/BreakIntoTech"."netflix_titles_info"
-WHERE type = "Movie" AND release_year = (SELECT MIN(release_year) 
+WHERE type = 'Movie' AND release_year = (SELECT MIN(release_year) 
 FROM "CharlotteChaze/BreakIntoTech"."netflix_titles_info"
-WHERE type = "Movie");
+WHERE type = 'Movie');
