@@ -52,3 +52,17 @@ FROM BIT_DB.Spotifydata
 WHERE artist_name >1
 GROUP BY artist_name
 ORDER BY COUNT(artist_name) desc
+
+--Create a CTE that can help me calculate the average popularity for the artist in the Spotify data table. Then, show the artist that has a popularity greater than 90 and label them as 'TOP STAR' 
+
+WITH popular_CTE AS (
+SELECT s.artist_name,
+AVG(s.popularity) AS average_popularity
+FROM SpotifyData s 
+GROUP BY s.artist_name)
+ 
+SELECT  artist_name,
+        average_popularity,
+        'Top Star' AS tag
+FROM popular_CTE
+WHERE average_popularity>=90;
